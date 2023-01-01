@@ -87,8 +87,11 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-// The total number of months included in the dataset.
-
+let numberOfMonths = []
+for (let i = 0; i < finances.length; i++) {
+    numberOfMonths.push(finances[i][0])
+    console.log(numberOfMonths)
+}
 // The net total amount of Profit/Losses over the entire period.
 
 // The average of the changes in Profit/Losses over the entire period.
