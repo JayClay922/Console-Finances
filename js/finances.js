@@ -87,14 +87,25 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-let numberOfMonths = []
+let numberOfMonths = finances.length
+console.log(numberOfMonths)
+
+let total = 0
 for (let i = 0; i < finances.length; i++) {
-    numberOfMonths.push(finances[i][0])
-    console.log(numberOfMonths)
+    total += finances[i][1]
 }
-// The net total amount of Profit/Losses over the entire period.
+console.log(total)
+
+
 
 // The average of the changes in Profit/Losses over the entire period.
+let averageChange = 0
+for (let i = 1; i < numberOfMonths; i++) {
+    averageChange += finances[i][1] - finances[i - 1][1]
+}
+let totalAverage = averageChange / (total - 1)
+let roundedAverage = totalAverage.toFixed(2)
+console.log(roundedAverage)
 
 // You will need to track what the total change in profits is from month to month and then find the average.
 
