@@ -90,12 +90,12 @@ var finances = [
 let numberOfMonths = finances.length
 console.log(numberOfMonths)
 
+
 let total = 0
 for (let i = 0; i < finances.length; i++) {
     total += finances[i][1]
 }
 console.log(total)
-
 
 
 let averageChange = 0
