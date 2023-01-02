@@ -98,7 +98,6 @@ console.log(total)
 
 
 
-// The average of the changes in Profit/Losses over the entire period.
 let averageChange = 0
 for (let i = 1; i < numberOfMonths; i++) {
     averageChange += finances[i][1] - finances[i - 1][1]
@@ -107,10 +106,24 @@ let totalAverage = averageChange / (total - 1)
 let roundedAverage = totalAverage.toFixed(2)
 console.log(roundedAverage)
 
-// You will need to track what the total change in profits is from month to month and then find the average.
 
-// (Total/Number of months)
+let greatestIncrease = {month: finances[0][0], value: finances[0][1]}
+for (let i = 1; i < numberOfMonths; i++) {
+    let change = finances[i][1] - finances[i - 1][1]
+    if (change > greatestIncrease.value) {
+        greatestIncrease.month = finances[i][0]
+        greatestIncrease.value = change
+    }
+}
+console.log(greatestIncrease.month + "(" + greatestIncrease.value + ")")
 
-// The greatest increase in profits (date and amount) over the entire period.
 
-// The greatest decrease in losses (date and amount) over the entire period.
+let greatestDecrease = {month: finances[0][0], value: finances[0][1]}
+for (let i = 1; i < numberOfMonths; i++) {
+    let change = finances[i][1] - finances[i - 1][1]
+    if (change < greatestDecrease.value) {
+        greatestDecrease.month = finances[i][0]
+        greatestDecrease.value = change
+    }
+}
+console.log(greatestDecrease.month + "(" + greatestDecrease.value + ")")
