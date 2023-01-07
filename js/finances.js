@@ -87,15 +87,18 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+console.log("Financial Analysis")
+console.log("------------------------------------------------------------")
+
 let numberOfMonths = finances.length
-console.log(numberOfMonths)
+console.log("Total Months: " + "$" + numberOfMonths)
 
 
 let total = 0
 for (let i = 0; i < finances.length; i++) {
     total += finances[i][1]
 }
-console.log(total)
+console.log("Total:" + " $" + total)
 
 
 let averageChange = 0
@@ -104,7 +107,7 @@ for (let i = 1; i < numberOfMonths; i++) {
 }
 let totalAverage = averageChange / (total - 1)
 let roundedAverage = totalAverage.toFixed(2)
-console.log(roundedAverage)
+console.log("Average Change:" + " $" + roundedAverage)
 
 
 let greatestIncrease = {month: finances[0][0], value: finances[0][1]}
@@ -115,7 +118,7 @@ for (let i = 1; i < numberOfMonths; i++) {
         greatestIncrease.value = change
     }
 }
-console.log(greatestIncrease.month + "(" + greatestIncrease.value + ")")
+console.log("Greatest Increase in Profits:" + " " + greatestIncrease.month + " (" + "$" + greatestIncrease.value + ")")
 
 
 let greatestDecrease = {month: finances[0][0], value: finances[0][1]}
@@ -126,4 +129,4 @@ for (let i = 1; i < numberOfMonths; i++) {
         greatestDecrease.value = change
     }
 }
-console.log(greatestDecrease.month + "(" + greatestDecrease.value + ")")
+console.log("Greatest Decrease in Loses:" + " " + greatestDecrease.month + "(" + "$" + greatestDecrease.value + ")")
